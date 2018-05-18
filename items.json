@@ -1,0 +1,40 @@
+{
+    "Ping":{
+    "name": "Foda-se",
+    "type":"Comandos",
+    "price":"100",
+    "desc":"comprar isso dá acesso a usar o comando Foda-se."
+    },
+    "FOGO":{
+        "name": "Magia negra",
+        "type":"Comandos",
+        "price":"100302",
+        "desc":"Comprar isso te dará poder supremo no meu bot..."
+        },
+        "Test":{
+            "name": "Sua mãe",
+            "type":"Comando",
+            "price":"1",
+            "desc":"Comprar isso te faz um merda!!!"
+            },
+
+"Diamante":{
+    "name": "copo de vidro",
+    "type":"Itens",
+    "price":"1",
+    "desc":"Comprar isso te faz ter um copo xD!!!"
+    },
+    "q":{
+        "name": "Diamante",
+        "type":"Itens",
+        "price":"1000",
+        "desc":"Comprar isso mostra que tu é rico xD!!!"
+        },
+        "biscoito":{
+            "name": "Passa Tempo",
+            "type":"Bolacha",
+            "price":"1000",
+            "desc":"Comprar isso te faz felis xD!!!"
+            }
+    
+}

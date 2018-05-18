@@ -1,0 +1,26 @@
+
+
+{
+  "name": "12",
+  "version": "3.2.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    },
+  "author": "Capitã Marvel#3173",
+  "license": "ISC",
+    "dependencies": {
+    "discord.js": "^11.3.2",
+    "express": "^4.16.3",
+    "ffmpeg": "0.0.4",
+    "fs": "0.0.1-security",
+    "moment": "^2.22.1",
+    "node-gyp": "^3.6.2",
+    "node-opus": "^0.2.7",
+    "opusscript": "0.0.6",
+    "simple-youtube-api": "^5.0.1",
+    "youtube-info": "^1.2.0",
+    "ytdl-core": "^0.20.2"
+  }
+}

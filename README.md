@@ -1,1 +1,2 @@
-# 54287582yhiuwrhtguqrhguhgsf
+# sysop partners
+para parceiros
