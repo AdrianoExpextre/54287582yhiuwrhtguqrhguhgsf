@@ -22,13 +22,8 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 music.on("ready", (message) => {
-music.user.setPresence({
-        status: 'dnd',
-        game: {
-            name: `Sysop Partners`,
-            url: 'https://www.twitch.tv/adrianocruz1105'
-        }
-});
+music.user.setStatus('Online');
+music.user.setGame('Pedófilos na fornalha');
 });
 
 music.on('message', async message => {
@@ -61,5 +56,5 @@ music.login(process.env.t);
 
 
 music.on('ready', async () => {
-    console.log(`${music.user.username} está on!`);
+    console.log(`${music.user.username} está respondendo!`);
 });
