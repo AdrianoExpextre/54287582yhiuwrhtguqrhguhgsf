@@ -21,10 +21,6 @@ fs.readdir("./commands/", (err, files) => {
 	});
 });
 
-music.on("ready", (message) => {
-music.user.setStatus('Online');
-music.user.setGame('Pedófilos na fornalha');
-});
 
 music.on('message', async message => {
     let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
