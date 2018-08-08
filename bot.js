@@ -22,6 +22,16 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
+music.on("ready", () => {
+music.user.setPresence({
+        status: 'Online',
+        game: {
+            name: `sy!help`,
+            url: 'https://www.twitch.tv/expextreadriano'
+        }
+});
+});
+
 music.on('message', async message => {
     let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 	  if (!prefixes[message.guild.id]) {
