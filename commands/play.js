@@ -23,10 +23,10 @@ const voiceChannel = message.member.voiceChannel;
     
     const permissions = voiceChannel.permissionsFor(music.user);
     if (!permissions.has('CONNECT')) {
-      return message.channel.send('Não consigo me conectar ao seu canal de voz, verifique se tenho as permissões adequadas!');
+      return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}, Não consigo me conectar ao seu canal de voz, verifique se tenho as permissões adequadas!`);
     } 
     if (!permissions.has('SPEAK')) {
-      return message.channel.send('Eu não posso falar neste canal de voz, verifique se eu tenho as permissões adequadas!');
+      return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! Eu não posso falar neste canal de voz, verifique se eu tenho as permissões adequadas!`);
     }
 
     if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -47,10 +47,10 @@ const voiceChannel = message.member.voiceChannel;
           
           
           const embed = new Discord.RichEmbed()
-          .setTitle("Selecione uma música <:movie_play_light_green:447056994398896159>")
+          .setTitle("<a:som:447056441556205570> Selecione uma música <a:som:447056441556205570>")
           .setDescription(videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n'))
           .setFooter("Defina um valor para selecionar a música entre 1 a 10!")
-          .setColor(0xff80c0)
+          .setColor('#fd5927')
           
           let msgtoDelete = await message.channel.send({embed: embed});
           // eslint-disable-next-line max-depth
@@ -64,7 +64,8 @@ const voiceChannel = message.member.voiceChannel;
           } catch (err) {
             console.error(err);
             const noPick = new Discord.RichEmbed()
-            .setDescription("O tempo expirou ou o arquivo é inválido! Selação de música cancelada.`")
+            .setDescription("<:sysalerta:469789950938841088> O tempo expirou ou o arquivo é inválido! Selação de música cancelada.")
+            .setColor('#fd5927');
             message.channel.send({embed: noPick});
             msgtoDelete.delete()
             return;
@@ -73,7 +74,7 @@ const voiceChannel = message.member.voiceChannel;
           var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
         } catch (err) {
           console.error(err);
-          return message.channel.send('🆘 Não consegui obter nenhum resultado.');
+          return message.channel.send('<:sysalerta:469789950938841088> Não consegui obter nenhum resultado.');
         } 
       }
       return handleVideo(video, message, voiceChannel);
@@ -189,10 +190,10 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
+         .setImage(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor(0xff80c0);
+         .setColor('#fd5927');
          
       return serverQueue.textChannel.send(embed2);
     }}};
@@ -209,10 +210,10 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
+         .setImage(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor(0xff80c0);
+         .setColor('#fd5927');
          
       return serverQueue.textChannel.send(embed3);;
     }}}
@@ -229,10 +230,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
+         .setImage(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor(0xff80c0);
+         .setColor('#fd5927');
          
       return serverQueue.textChannel.send(embed4);
     }}}
@@ -248,10 +249,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
+         .setImage(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor(0xff80c0);
+         .setColor('#fd5927');
          
       return serverQueue.textChannel.send(embed5);
     }}
@@ -267,10 +268,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
+         .setImage(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor(0xff80c0);
+         .setColor('#fd5927');
          
       return serverQueue.textChannel.send(embed6);
     }}
@@ -285,10 +286,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
+         .setImage(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor(0xff80c0);
+         .setColor('#fd5927');
          
       return serverQueue.textChannel.send(embed7);
     } else {
@@ -302,10 +303,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
+         .setImage(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor(0xff80c0);
+         .setColor('#fd5927');
          
       return serverQueue.textChannel.send(embed8);
 
