@@ -16,16 +16,16 @@ exports.run = async(client, message, args,  queue) => {
     const url = args1[1] ? args1[1].replace(/<(.+)>/g, '$1') : '';
     const serverQueue = queue.get(message.guild.id); 
 
-    if (!message.member.voiceChannel) return message.channel.send('Você não está em um canal de voz! :loud_sound:');
-		if (!serverQueue) return message.channel.send('Não há nada tocando.');
+    if (!message.member.voiceChannel) return message.channel.send('<:sysalerta:469789950938841088> Você não está em um canal de voz! :loud_sound:');
+		if (!serverQueue) return message.channel.send('<:sysalerta:469789950938841088> Não há nada tocando.');
 		if (!args1[1]) return message.channel.send(`:loud_sound:  O volume atual é: **${serverQueue.volume}**`);
 		serverQueue.volume = args1[1];
-    if (args1[1] > 15) return message.channel.send(':no_entry_sign: O limite `15` é o máximo!');
+    if (args1[1] > 15) return message.channel.send(`:no_entry_sign: O limite \`15\` é o máximo! Vol atual: **${serverQueue.volume}**`);
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args1[1] / 15);
         
         let vEmbed = new Discord.RichEmbed()
         .setDescription(`:loud_sound:  Volume configurado para: **${args1[1]}**`)
-        .setColor(0xff80c0)
+        .setColor('#fd5927')
         
         message.channel.send(vEmbed);
         
@@ -56,7 +56,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
       queueConstruct.connection = connection;
       play(message.guild, queueConstruct.songs[0]);
     } catch (error) {
-      console.error(`Eu não pude entrar no canal de voz: ${error}`);
+      console.error(`<:sysalerta:469789950938841088> Eu não pude entrar no canal de voz: ${error}`);
       queue.delete(message.guild.id);
       return message.channel.send(`Eu não pude entrar no canal de voz: ${error}`);
     }
@@ -89,7 +89,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
             }, 250);
         })
         .on('error', error => console.error(error));
-    dispatcher.setVolumeLogarithmic(serverQueue.volume / 10);
+    dispatcher.setVolumeLogarithmic(serverQueue.volume / 15);
 
     serverQueue.textChannel.send(`Começou a tocar: **${song.title}**`);
 }
