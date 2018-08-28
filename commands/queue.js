@@ -19,10 +19,10 @@ exports.run = async(client, message, args, queue) => {
     if (!serverQueue) return message.channel.send('Não há nada tocando! Adicione algumas músicas para tocar usando: sy!play `<Músicas>`');
     
     const queueInfo = new Discord.RichEmbed()
-    .setTitle("Músicas na fila:")
-    .setDescription(`${serverQueue.songs.map(song => `**-** ${song.title}`).slice(0, 16).join('\n')}`)
-    .setFooter("Tocando agora: " + serverQueue.songs[0].title)
-    .setColor(0xff80c0)
+    .setTitle(`<a:discoSong:483871229741105163> Tocando agora: ${serverQueue.songs[0].title}\n\nMúsicas na fila:`)
+    .setDescription(`${serverQueue.songs.map(song => `• ${song.title}`).slice(0, 40).join('\n')}`)
+    //.setFooter("<a:discoSong:483871229741105163> Tocando agora: " + serverQueue.songs[0].title)
+    .setColor('#00d8ff')
     
     return message.channel.send({embed: queueInfo});
 
@@ -43,7 +43,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
       connection: null,
       skippers: [],
       songs: [],
-      volume: 5,
+      volume: 8,
       playing: true
     };
     queue.set(message.guild.id, queueConstruct);
