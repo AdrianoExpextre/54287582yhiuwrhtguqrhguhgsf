@@ -50,9 +50,9 @@ const voiceChannel = message.member.voiceChannel;
           .setTitle("<a:som:447056441556205570> Selecione uma música <a:som:447056441556205570>")
           .setDescription(videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n'))
           .setFooter("Defina um valor para selecionar a música entre 1 a 10!")
-          .setColor('#fd5927')*/
+          .setColor('#fd5927')*/ //${song.durationm}:${durations}
           
-          let msgtoDelete = await message.channel.send(`**Selecione uma música da lista**\n\n${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`);
+          let msgtoDelete = await message.channel.send(`**Selecione uma música da lista**\n\n${videos.map(video2 => `**${++index} -** ${video2.title} **${video2.duration}**`).join('\n')}`);
           // eslint-disable-next-line max-depth
           try {
             var response = await message.channel.awaitMessages(message2 => message2.content > 0 && message2.content < 11, {
