@@ -20,8 +20,8 @@ exports.run = async(client, message, args,  queue) => {
 		if (!serverQueue) return message.channel.send('<:sysalerta:469789950938841088> Não há nada tocando.');
 		if (!args1[1]) return message.channel.send(`<a:Volume:483880143991996417> | O volume atual é: **${serverQueue.volume}**`);
 		serverQueue.volume = args1[1];
-    if (args1[1] > 100) return message.channel.send(`:no_entry_sign: O limite \`100\` é o máximo!`);
-        serverQueue.connection.dispatcher.setVolumeLogarithmic(args1[1] / 100);
+    if (args1[1] > 10) return message.channel.send(`:no_entry_sign: O limite \`10\` é o máximo!`);
+        serverQueue.connection.dispatcher.setVolumeLogarithmic(args1[1] / 10);
         
        
     
@@ -42,7 +42,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
       connection: null,
       skippers: [],
       songs: [],
-      volume: 5,
+      volume: 8,
       playing: true
     };
     queue.set(message.guild.id, queueConstruct);
