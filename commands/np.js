@@ -17,7 +17,7 @@ exports.run = async(clint, message, args, queue) => {
   const serverQueue = queue.get(message.guild.id);
 
     if (!serverQueue) return message.channel.send("Não há nada tocando!");
-    message.channel.send(`Tocando agora: **${serverQueue.songs[0].title}** adicionado por ${message.author.username}`)
+    message.channel.send(`<a:discoSong:483871229741105163> Tocando agora: **${serverQueue.songs[0].title}**.`)
  
     // Time for the functions
 
