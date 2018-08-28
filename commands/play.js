@@ -31,7 +31,7 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
   const serverQueue = queue.get(message.guild.id);
   let o = message.mentions.users.first() ? message.mentions.users.first().username : message.author.username;
   let fotinha = message.mentions.users.first() ? message.mentions.users.first().avatarURL : message.author.avatarURL
-const voiceChannel = message.member.voiceChannel;
+  const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author} você não está em um canal de voz!`);
     if (searchString <1) return message.reply(`<:sysalerta:469789950938841088> ${message.author}, você deve especificar o nome da música ou adicionar um URL!`);
     
@@ -113,7 +113,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
       connection: null,
       skippers: [],
       songs: [],
-      volume: 8,
+      volume: 6,
       playing: true
     };
     
