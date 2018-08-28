@@ -20,7 +20,7 @@ exports.run = async(music, message, args, queue) => {
  if ([documento.block].includes(message.author.id)) return message.channel.send(`<:xguardian:476061993368027148> ${message.author}, você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate!`);
         
 }
-})
+
   
   if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
 
