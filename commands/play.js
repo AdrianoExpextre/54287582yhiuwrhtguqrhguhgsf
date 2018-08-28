@@ -22,8 +22,8 @@ exports.run = async(music, message, args, queue) => {
   let o = message.mentions.users.first() ? message.mentions.users.first().username : message.author.username;
   let fotinha = message.mentions.users.first() ? message.mentions.users.first().avatarURL : message.author.avatarURL
 const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.channel.send('Me desculpe, mas você precisa estar em um canal de voz para tocar música!');
-    if (searchString <1) return message.reply(":x: Você deve especificar o nome da música ou adicionar um URL.");
+    if (!voiceChannel) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author} você não está em um canal de voz!`);
+    if (searchString <1) return message.reply(`<:sysalerta:469789950938841088> ${message.author}, você deve especificar o nome da música ou adicionar um URL!`);
     
     const permissions = voiceChannel.permissionsFor(music.user);
     if (!permissions.has('CONNECT')) {
@@ -40,7 +40,7 @@ const voiceChannel = message.member.voiceChannel;
         const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
         await handleVideo(video2, message, voiceChannel, true); // eslint-disable-line no-await-in-loop
       }
-      return message.channel.send(`<:trust:447056422346424320> **${playlist.title}** foi adicionado à fila po ${message.author.username} `);
+      return message.channel.send(`<a:discoSong:483871229741105163> | **${playlist.title}** foi adicionado à fila por ${message.author.username}`);
     } else {
       try {
         var video = await youtube.getVideo(url);
@@ -56,7 +56,7 @@ const voiceChannel = message.member.voiceChannel;
           .setFooter("Defina um valor para selecionar a música entre 1 a 10!")
           .setColor('#fd5927')*/ //${song.durationm}:${durations}
           
-          let msgtoDelete = await message.channel.send(`**Selecione uma música da lista**\n\n${videos.map(video2 => `**${++index} -** ${video2.title} **${video2.duration}**`).join('\n')}`);
+          let msgtoDelete = await message.channel.send(`**Selecione uma música da lista**\n\n${videos.map(video2 => `**${++index} -** ${video2.title} **${video2.durations}**`).join('\n')}`);
           // eslint-disable-next-line max-depth
           try {
             var response = await message.channel.awaitMessages(message2 => message2.content > 0 && message2.content < 11, {
