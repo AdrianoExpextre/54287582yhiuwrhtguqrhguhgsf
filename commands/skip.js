@@ -20,6 +20,8 @@ if (!message.member.voiceChannel) return message.channel.send('Você não está 
       		serverQueue.connection.dispatcher.end('O comando Skip foi usado!');
 		return undefined;
 
+	message.channel.send(`:fast_forward: | Música pulada por: \`${message.author.username}\``)
+	
     // Time for the functions
     async function handleVideo(video, message, voiceChannel, playlist = false) {
       const serverQueue = queue.get(message.guild.id);
