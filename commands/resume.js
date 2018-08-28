@@ -19,11 +19,7 @@ exports.run = async(client, message, args,  queue) => {
       serverQueue.playing = true;
       serverQueue.connection.dispatcher.resume();
       
-      const rEmbed = new Discord.RichEmbed()
-      .setDescription(":arrow_forward: A música foi despausada para você!")
-      .setColor("RANDOM");
-
-      return message.channel.send(rEmbed);
+      return message.channel.send(`:arrow_forward: | Música despausada por: \`${message.author.username}\``)
     }
     return message.channel.send("Não há nada pausado para despausar!");
  
