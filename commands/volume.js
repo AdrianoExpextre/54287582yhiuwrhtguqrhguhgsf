@@ -18,16 +18,14 @@ exports.run = async(client, message, args,  queue) => {
 
     if (!message.member.voiceChannel) return message.channel.send('<:sysalerta:469789950938841088> Você não está em um canal de voz! :loud_sound:');
 		if (!serverQueue) return message.channel.send('<:sysalerta:469789950938841088> Não há nada tocando.');
-		if (!args1[1]) return message.channel.send(`:loud_sound:  O volume atual é: **${serverQueue.volume}**`);
+		if (!args1[1]) return message.channel.send(`<a:Volume:483880143991996417> | O volume atual é: **${serverQueue.volume}**`);
 		serverQueue.volume = args1[1];
-    if (args1[1] > 15) return message.channel.send(`:no_entry_sign: O limite \`15\` é o máximo! Vol atual: **${serverQueue.volume}**`);
-        serverQueue.connection.dispatcher.setVolumeLogarithmic(args1[1] / 15);
+    if (args1[1] > 10) return message.channel.send(`:no_entry_sign: O limite \`10\` é o máximo! Vol atual: **${serverQueue.volume}**`);
+        serverQueue.connection.dispatcher.setVolumeLogarithmic(args1[1] / 10);
         
-        let vEmbed = new Discord.RichEmbed()
-        .setDescription(`:loud_sound:  Volume configurado para: **${args1[1]}**`)
-        .setColor('#fd5927')
-        
-        message.channel.send(vEmbed);
+       
+    
+        message.channel.send(`<a:Volume:483880143991996417> | Volume alerado para: **${args1[1]}**`);
         
 async function handleVideo(video, message, voiceChannel, playlist = false) {
   const serverQueue = queue.get(message.guild.id);
