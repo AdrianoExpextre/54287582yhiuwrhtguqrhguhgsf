@@ -9,11 +9,11 @@ const youtube = new YouTube(key);
 const opus = require("opusscript");
 const gyp = require("node-gyp");
 var fetchVideoInfo = require('youtube-info');
+var db = require('../database.js');
+
 
 exports.run = async(music, message, args, queue) => {
-  
-  let db = require('../database.js');
-  db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
+db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
                 if(documento) {
          if (!['244489368717230090'].includes(message.author.id))
                 
