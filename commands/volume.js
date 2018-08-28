@@ -20,12 +20,12 @@ exports.run = async(client, message, args,  queue) => {
 		if (!serverQueue) return message.channel.send('<:sysalerta:469789950938841088> Não há nada tocando.');
 		if (!args1[1]) return message.channel.send(`<a:Volume:483880143991996417> | O volume atual é: **${serverQueue.volume}**`);
 		serverQueue.volume = args1[1];
-    if (args1[1] > 10) return message.channel.send(`:no_entry_sign: O limite \`10\` é o máximo! Vol atual: **${serverQueue.volume}**`);
+    if (args1[1] > 10) return message.channel.send(`:no_entry_sign: O limite \`10\` é o máximo!`);
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args1[1] / 10);
         
        
     
-        message.channel.send(`<a:Volume:483880143991996417> | Volume alerado para: **${args1[1]}**`);
+        message.channel.send(`<a:Volume:483880143991996417> | Volume alterado para: **${args1[1]}** por \`${message.author.username}\``);
         
 async function handleVideo(video, message, voiceChannel, playlist = false) {
   const serverQueue = queue.get(message.guild.id);
