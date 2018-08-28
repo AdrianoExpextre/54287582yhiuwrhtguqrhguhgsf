@@ -113,7 +113,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
       connection: null,
       skippers: [],
       songs: [],
-      volume: 40,
+      volume: 10,
       playing: true
     };
     
@@ -178,7 +178,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
   if(song.durationh !== 0) {
     if(secondslength == 1 || secondslength == 0) {
       if(mlength == 1 || mlength == 0) {
-      return serverQueue.textChannel.send(`Tocando: **[${song.title}](https://www.youtube.com/watch?v=${video.id})** (${song.durationh}:0${song.durationm}:0${durations})`);
+      return serverQueue.textChannel.send(`<a:discoSong:483871229741105163> Tocando agora: **${song.title}** **(${song.durationh}:0${song.durationm}:0${durations})**`);
   }}}
   if(song.durationh !== 0) {
     if(secondslength == 1 || secondslength == 0) {
