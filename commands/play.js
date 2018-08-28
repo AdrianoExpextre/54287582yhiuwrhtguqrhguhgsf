@@ -183,10 +183,10 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setImage(v.thumbnailUrl)
+         .setThumbnail(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#fd5927');
+         .setColor('#00d8ff');
          
       return serverQueue.textChannel.send(embed2);
     }}};
@@ -203,10 +203,10 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setImage(v.thumbnailUrl)
+         .setThumbnail(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#fd5927');
+         .setColor('#00d8ff');
          
       return serverQueue.textChannel.send(embed3);;
     }}}
@@ -223,10 +223,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setImage(v.thumbnailUrl)
+         .setThumbnail(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#fd5927');
+         .setColor('#00d8ff');
          
       return serverQueue.textChannel.send(embed4);
     }}}
@@ -242,10 +242,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setImage(v.thumbnailUrl)
+         .setThumbnail(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#fd5927');
+         .setColor('#00d8ff');
          
       return serverQueue.textChannel.send(embed5);
     }}
@@ -261,10 +261,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setImage(v.thumbnailUrl)
+         .setThumbnail(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#fd5927');
+         .setColor('#00d8ff');
          
       return serverQueue.textChannel.send(embed6);
     }}
@@ -279,10 +279,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setImage(v.thumbnailUrl)
+         .setThumbnail(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#fd5927');
+         .setColor('#00d8ff');
          
       return serverQueue.textChannel.send(embed7);
     } else {
@@ -296,10 +296,10 @@ const embed4 = new Discord.RichEmbed()
          .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
          .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
          .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setImage(v.thumbnailUrl)
+         .setThumbnail(v.thumbnailUrl)
          .setTimestamp()
          .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#fd5927');
+         .setColor('#00d8ff');
          
       return serverQueue.textChannel.send(embed8);
 
