@@ -19,8 +19,7 @@ if (!message.member.voiceChannel) return message.channel.send('Você não está 
 		if (!serverQueue) return message.channel.send("Eu não posso fazer nada?! :thinking:");
       		serverQueue.connection.dispatcher.end('O comando Skip foi usado!');
 		return message.channel.send(`:fast_forward: | Música pulada por: \`${message.author.username}\``)
-else 
-	return message.channel.send(`<:sysalerta:469789950938841088> ${message.author}, não tem músicas na fila.`)
+//return message.channel.send(`<:sysalerta:469789950938841088> ${message.author}, não tem músicas na fila.`)
     // Time for the functions
     async function handleVideo(video, message, voiceChannel, playlist = false) {
       const serverQueue = queue.get(message.guild.id);
