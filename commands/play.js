@@ -11,6 +11,10 @@ const gyp = require("node-gyp");
 var fetchVideoInfo = require('youtube-info');
 
 exports.run = async(music, message, args, queue) => {
+  
+  if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
+
+  
   const args1 = message.content.split(' ');
   const searchString = args1.slice(1).join(' ');
   const url = args1[1] ? args1[1].replace(/<(.+)>/g, '$1') : '';
