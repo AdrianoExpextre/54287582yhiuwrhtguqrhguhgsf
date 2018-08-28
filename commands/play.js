@@ -42,17 +42,17 @@ const voiceChannel = message.member.voiceChannel;
         var video = await youtube.getVideo(url);
       } catch (error) {
         try {
-          var videos = await youtube.searchVideos(searchString, 10);
+          var videos = await youtube.searchVideos(searchString, 5);
           let index = 0;
           
           
-          const embed = new Discord.RichEmbed()
+          /*const embed = new Discord.RichEmbed()
           .setTitle("<a:som:447056441556205570> Selecione uma música <a:som:447056441556205570>")
           .setDescription(videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n'))
           .setFooter("Defina um valor para selecionar a música entre 1 a 10!")
-          .setColor('#fd5927')
+          .setColor('#fd5927')*/
           
-          let msgtoDelete = await message.channel.send({embed: embed});
+          let msgtoDelete = await message.channel.send(`**Selecione uma música da lista**\n\n${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`);
           // eslint-disable-next-line max-depth
           try {
             var response = await message.channel.awaitMessages(message2 => message2.content > 0 && message2.content < 11, {
@@ -63,10 +63,7 @@ const voiceChannel = message.member.voiceChannel;
             msgtoDelete.delete();
           } catch (err) {
             console.error(err);
-            const noPick = new Discord.RichEmbed()
-            .setDescription("<:sysalerta:469789950938841088> O tempo expirou ou o arquivo é inválido! Selação de música cancelada.")
-            .setColor('#fd5927');
-            message.channel.send({embed: noPick});
+            message.channel.send(`:shrug::skin-tone-2: | Passou-se **20** segundos e nenhuma resposta. Cancelado seleção da música!`);
             msgtoDelete.delete()
             return;
           }
@@ -126,15 +123,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
     console.log(serverQueue.songs);
     if (playlist) return undefined;
       
-    else return message.channel.send({
-      embed: {
-    color: 0xff80c0,
-    description: `** [${v.title}](${v.url}) ** foi adicionado por **${message.author.username} **`,
-    "thumbnail": {
-            "url": v.thumbnail
-    },
-}
-})
+    else return message.channel.send(`:notes: **${v.title}** foi adicionado por \`${message.author.username}\``);
           })  
          
 }
