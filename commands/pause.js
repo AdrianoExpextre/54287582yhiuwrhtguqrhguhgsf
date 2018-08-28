@@ -19,10 +19,7 @@ exports.run = async(clint, message, args, queue) => {
 if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-      let embed = new Discord.RichEmbed()
-      .setDescription('Música pausada!')
-      .setColor(0xff80c0)
-			return message.channel.send(embed);
+     return message.channel.send(`:pause_button: | Música pausada po: \`${message.author.username}\``)
 		}
 		return message.channel.send('Não há nada tocando...');
 
