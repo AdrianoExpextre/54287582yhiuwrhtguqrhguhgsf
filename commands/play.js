@@ -56,7 +56,7 @@ const voiceChannel = message.member.voiceChannel;
         var video = await youtube.getVideo(url);
       } catch (error) {
         try {
-          var videos = await youtube.searchVideos(searchString, 5);
+          var videos = await youtube.searchVideos(searchString, 6);
           let index = 0;
           
           
