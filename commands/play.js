@@ -36,7 +36,7 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
     if (searchString <1) return message.channel.send(`<:sysalerta:469789950938841088> ${message.author}, você deve especificar o nome da música ou adicionar um URL!`);
   
    if (message.guild.members.get(music.user.id).voiceChannel) 
-   return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! já estou conectado no canal **${message.guild.members.get(client.user.id).voiceChannel.name}**`)
+   return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! já estou conectado no canal **${message.guild.members.get(music.user.id).voiceChannel.name}**`)
  
     const permissions = voiceChannel.permissionsFor(music.user);
     if (!permissions.has('CONNECT')) {
