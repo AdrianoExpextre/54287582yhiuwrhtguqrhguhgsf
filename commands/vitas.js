@@ -17,8 +17,7 @@ const permissions = voiceChannel.permissionsFor(client.user);
     }
 
 var asdasd = { "URL": "https://youtube.com/watch?v=j4jS5ZYp4kc" }
-voiceChannel.join().then(connection => {
-
+message.member.voiceChannel.join().then(connection => {
 let vitas = 'https://www.youtube.com/watch?v=j4jS5ZYp4kc';  
 const url = ytdl(vitas, { filter: 'audioonly' });
 const dispatcher = connection.playStream(url);
