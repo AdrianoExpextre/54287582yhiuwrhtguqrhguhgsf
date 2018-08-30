@@ -33,7 +33,7 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
   let fotinha = message.mentions.users.first() ? message.mentions.users.first().avatarURL : message.author.avatarURL
   const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author} você não está em um canal de voz!`);
-    if (searchString <1) return message.reply(`<:sysalerta:469789950938841088> ${message.author}, você deve especificar o nome da música ou adicionar um URL!`);
+    if (searchString <1) return message.channel.send(`<:sysalerta:469789950938841088> ${message.author}, você deve especificar o nome da música ou adicionar um URL!`);
     
     const permissions = voiceChannel.permissionsFor(music.user);
     if (!permissions.has('CONNECT')) {
