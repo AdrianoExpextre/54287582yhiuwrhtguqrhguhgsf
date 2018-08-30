@@ -42,6 +42,10 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
     if (!permissions.has('SPEAK')) {
       return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! Eu não posso falar neste canal de voz, verifique se eu tenho as permissões adequadas!`);
     }
+  
+  if (message.guild.members.get(music.user.id).voiceChannel) 
+  return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! já estou conectado no canal **${message.guild.members.get(client.user.id).voiceChannel.name}**`)
+
 
     if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
       const playlist = await youtube.getPlaylist(url);
