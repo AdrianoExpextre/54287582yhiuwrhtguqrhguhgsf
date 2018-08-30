@@ -26,3 +26,9 @@ const dispatcher = connection.playStream(url);
     
 });  
 };
+
+exports.help = {
+    name: "vitas",
+    description: "Meme do vitas",
+    usage: "sy!vitas"
+}
