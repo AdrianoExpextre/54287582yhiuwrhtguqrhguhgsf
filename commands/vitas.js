@@ -21,7 +21,7 @@ message.member.voiceChannel.join().then(connection => {
 let vitas = 'https://www.youtube.com/watch?v=j4jS5ZYp4kc';  
 const url = ytdl(vitas, { filter: 'audioonly' });
 const dispatcher = connection.playStream(url);
-
+console.log(typeof streamDoYtdl)
     
 });  
 };
