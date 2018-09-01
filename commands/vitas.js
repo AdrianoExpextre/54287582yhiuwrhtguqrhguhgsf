@@ -4,11 +4,11 @@ exports.run = (music, message, args) => {
 if (!message.member.voiceChannel) 
 return message.channel.send(`<:xguardian:476061993368027148> ${message.author} conecte-se a um canal de voz primeiro!`)
 
-if (message.guild.members.get(music.user.id).voiceChannel) 
+/*if (message.guild.members.get(music.user.id).voiceChannel) 
 return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! já estou conectado no canal **${message.guild.members.get(music.user.id).voiceChannel.name}**`)
-
+*/
 const voiceChannel = message.member.voiceChannel;
-const permissions = voiceChannel.permissionsFor(client.user);
+const permissions = voiceChannel.permissionsFor(music.user);
     if (!permissions.has('CONNECT')) {
       return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}, Não consigo me conectar ao seu canal de voz, verifique se tenho as permissões adequadas!`);
     } 
