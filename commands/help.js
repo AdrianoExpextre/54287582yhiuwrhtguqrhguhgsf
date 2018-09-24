@@ -373,3 +373,8 @@ h9.on('collect', r => {
 	});
     };
     
+exports.help = {
+    name: "help",
+    description: "comandos/ajuda",
+    usage: "sy!help"
+}
