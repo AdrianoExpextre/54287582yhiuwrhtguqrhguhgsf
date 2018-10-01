@@ -36,7 +36,7 @@ if (!message.member.voiceChannel) return message.channel.send('Você não está 
           connection: null,
           skippers: [],
           songs: [],
-          volume: 8,
+          volume: 5,
           playing: true
         };
         queue.set(message.guild.id, queueConstruct);
