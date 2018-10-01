@@ -12,7 +12,7 @@ var fetchVideoInfo = require('youtube-info');
 var db = require('../database.js');
 
 
-exports.run = async(client, message, args, queue) => {
+exports.run = async(music, message, args, queue) => {
 db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
                 if(documento) {
          if (!['244489368717230090'].includes(message.author.id))
