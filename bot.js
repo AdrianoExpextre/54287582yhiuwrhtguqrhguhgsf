@@ -29,8 +29,8 @@ music.on("message", message => {
                 console.log(args)
                 try {   
 
-	                let commandFile = require(`./cmds/${command}.js`);
-                    commandFile.run(Sysop, message, args);
+	                let commandFile = require(`./commands/${command}.js`);
+                    commandFile.run(music, message, args);
 
                 } catch (err) {
                     if (err.code === 'MODULE_NOT_FOUND') return;
