@@ -170,7 +170,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
             }, 250);
         })
         .on('error', error => console.error(error));
-    dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+    dispatcher.setVolumeLogarithmic(serverQueue.volume / 3);
 
     //Modified playing messages that give you the song duration!
     fetchVideoInfo(`${song.id}`).then(function (v) {    
