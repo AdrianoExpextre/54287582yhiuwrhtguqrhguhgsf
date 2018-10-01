@@ -7,43 +7,52 @@ const db = require('./database.js')
 music.commands = new Discord.Collection();
 const queue = new Map();
 
-fs.readdir("./commands/", (err, files) => {
-	
-	db.Guilds.findOne({"_id": music.guild.id}).then(servidor => {
+music.on("message", message => {
+    if (message.author.bot) return;
+    if (message.channel.type === "dm") return;
+    
+    db.Guilds.findOne({"_id": message.guild.id}).then(servidor => {
 
-        if (music.content.startsWith(servidor.setprefix)) {
+        if (message.content.startsWith(servidor.setprefix)) {
 
-            db.Bloqueio.findOne({"_id": music.author.id}).then(bloqueio => {
+            db.Bloqueio.findOne({"_id": message.author.id}).then(bloqueio => {
 
                 if(bloqueio) {
-                    if ([bloqueio.block].includes(music.author.id) && !['244489368717230090'].includes(music.author.id))
-                    return music.channel.send(`<:xguardian:476061993368027148> | ${music.author}! Você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate! `);
+                    if ([bloqueio.block].includes(message.author.id) && !['244489368717230090'].includes(message.author.id))
+                    return message.channel.send(`<:xguardian:476061993368027148> | ${message.author}! Você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate! `);
                 }
 
+                let command = message.content.split(" ")[0];
+                command = command.slice(servidor.setprefix.length);
 
-	if (err) console.log(err);
-	let jsfile = files.filter(f => f.split(".").pop() === "js")
-	if(jsfile.length <= 0) {
-		console.log("Comando não encontrado!");
-		return;
-	}
+                let args = message.content.split(" ").slice(1);
+                console.log(args)
+                try {   
 
-	jsfile.forEach((f, i) => {
-		let props = require(`./commands/${f}`);
-		music.commands.set(props.help.name, props);
-	});
-	     })
-        }})
-});
+	                let commandFile = require(`./cmds/${command}.js`);
+                    commandFile.run(Sysop, message, args);
 
+                } catch (err) {
+                    if (err.code === 'MODULE_NOT_FOUND') return;
+                    console.warn(err);
+                }
+
+            })
+       
+            }
+        
+    
+    })
+   
+  });
 
 music.on("ready", () => {
 music.user.setPresence({
         status: 'Online',
-        game: {
+        /*game: {
             name: `sy!help`,
             url: 'https://www.twitch.tv/expextreadriano'
-        }
+        }*/
 });
 });
 
