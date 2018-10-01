@@ -9,7 +9,7 @@ const youtube = new YouTube(key);
 const opus = require("opusscript");
 const gyp = require("node-gyp");
 
-exports.run = async(client, message, args,  queue) => { 
+exports.run = async(music, message, args,  queue) => { 
   const args1 = message.content.split(' ');
   const searchString = args1.slice(1).join(' ');
   const url = args1[1] ? args1[1].replace(/<(.+)>/g, '$1') : '';
