@@ -30,7 +30,7 @@ music.on("message", message => {
                 try {   
 
 	                let commandFile = require(`./commands/${command}.js`);
-                    commandFile.run(music, message, args);
+                    commandFile.run(client, message, args);
 
                 } catch (err) {
                     if (err.code === 'MODULE_NOT_FOUND') return;
