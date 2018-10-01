@@ -9,15 +9,15 @@ const queue = new Map();
 
 fs.readdir("./commands/", (err, files) => {
 	
-	db.Guilds.findOne({"_id": message.guild.id}).then(servidor => {
+	db.Guilds.findOne({"_id": music.guild.id}).then(servidor => {
 
         if (music.content.startsWith(servidor.setprefix)) {
 
-            db.Bloqueio.findOne({"_id": message.author.id}).then(bloqueio => {
+            db.Bloqueio.findOne({"_id": music.author.id}).then(bloqueio => {
 
                 if(bloqueio) {
-                    if ([bloqueio.block].includes(message.author.id) && !['244489368717230090'].includes(message.author.id))
-                    return message.channel.send(`<:xguardian:476061993368027148> | ${message.author}! Você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate! `);
+                    if ([bloqueio.block].includes(music.author.id) && !['244489368717230090'].includes(music.author.id))
+                    return music.channel.send(`<:xguardian:476061993368027148> | ${music.author}! Você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate! `);
                 }
 
 
