@@ -87,7 +87,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
             }, 250);
         })
         .on('error', error => console.error(error));
-    dispatcher.setVolumeLogarithmic(serverQueue.volume / 15);
+    dispatcher.setVolumeLogarithmic(serverQueue.volume / 6);
 
     serverQueue.textChannel.send(`Começou a tocar: **${song.title}**`);
 }
