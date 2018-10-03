@@ -254,7 +254,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                              return;
                        });
        });
-    }}}*/
+    }}}
     if(song.durationh == 0 && song.durationm !== 0) {
       if(secondslength == 1 || secondslength == 0) {
   let p1  =  Jimp.read(v.thumbnailUrl);
@@ -318,7 +318,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                              return;
                        });
        });
-    }}
+    }}*/
     if(song.durationh == 0 && song.durationm == 0 && song.durations !== 0) {
    let p1  =  Jimp.read(v.thumbnailUrl);
        let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
