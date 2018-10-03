@@ -404,7 +404,7 @@ var Jimp = require("jimp");
                        });
        });
     } else {
-        var Jimp = require("jimp");
+       /* var Jimp = require("jimp");
 
        let p1  =  Jimp.read(v.thumbnailUrl);
        let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
@@ -436,7 +436,7 @@ var Jimp = require("jimp");
                              if (err) throw err;
                               return serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
                        });
-       });
+       });*/
 
             }
           })
