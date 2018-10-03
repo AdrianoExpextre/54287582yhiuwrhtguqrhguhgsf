@@ -26,7 +26,8 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
 
   
   const args1 = message.content.split(' ');
- 
+  const searchString = args1.slice(1).join(' ');
+
   const url = args1[1] ? args1[1].replace(/<(.+)>/g, '$1') : '';
   const serverQueue = queue.get(message.guild.id);
   const serverQueue2 = queue.get(message.guild.id);
