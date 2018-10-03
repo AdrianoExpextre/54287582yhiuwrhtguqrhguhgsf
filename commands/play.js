@@ -365,7 +365,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
              let mask = images[4];
           
              img.resize(115, 115);
-             lv.print(fuente, 150, 30, `${v.title}`, 380);
+             lv.print(fuente, 150, 30, `${v.title}`, 380)`);
              lv.print(fuente2, 170, 95, `${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
        
