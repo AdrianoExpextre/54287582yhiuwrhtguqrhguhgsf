@@ -184,10 +184,10 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
       if(mlength == 1 || mlength == 0) {
       return serverQueue.textChannel.send(`<a:discoSong:483871229741105163> Tocando agora: **${song.title}** **(${song.durationh}:0${song.durationm}:0${durations})**`);
   }}}
-  if(song.durationh !== 0) {
+  /*if(song.durationh !== 0) {
     if(secondslength == 1 || secondslength == 0) {
       if(mlength !== 1 || mlength !== 0) {
-    let p1  =  Jimp.read(v.thumbnailUrl);
+      let p1  =  Jimp.read(v.thumbnailUrl);
        let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
        let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
        let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
@@ -254,7 +254,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                              return;
                        });
        });
-    }}}
+    }}}*/
     if(song.durationh == 0 && song.durationm !== 0) {
       if(secondslength == 1 || secondslength == 0) {
   let p1  =  Jimp.read(v.thumbnailUrl);
