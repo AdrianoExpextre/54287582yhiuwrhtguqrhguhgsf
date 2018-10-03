@@ -117,7 +117,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
       connection: null,
       skippers: [],
       songs: [],
-      volume: 6,
+      volume: 5,
       playing: true
     };
     
@@ -334,9 +334,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
              let fuente2 = images[3];
              let mask = images[4];
           
-             img.resize(115, 110);
+             img.resize(115, 115);
              lv.print(fuente, 150, 30, `${v.title}`, 380);
-             lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
+             lv.print(fuente2, 170, 95, `${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
        
        
@@ -345,7 +345,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              message.channel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              message.channel.send(``\`${v.url}\```,new Discord.Attachment(image, 'CardMusicSysop.png'));
                              return;
                        });
        });
@@ -364,9 +364,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
              let fuente2 = images[3];
              let mask = images[4];
           
-             img.resize(115, 110);
+             img.resize(115, 115);
              lv.print(fuente, 150, 30, `${v.title}`, 380);
-             lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
+             lv.print(fuente2, 170, 95, `${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
        
        
@@ -375,7 +375,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              message.channel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              message.channel.send(`\`${v.url}\``,new Discord.Attachment(image, 'CardMusicSysop.png'));
                              return;
                        });
        });
