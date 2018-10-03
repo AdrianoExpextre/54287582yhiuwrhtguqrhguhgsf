@@ -224,7 +224,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              return serverQueue2.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                                                return;
+
                        });
        });
     }}};
@@ -261,7 +263,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              return serverQueue3.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                             serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                                                return;
+
                        });
        });
     }}}
@@ -298,7 +302,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              return serverQueue4.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                                                return;
+
                        });
        });
     }}}
@@ -334,7 +340,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              return serverQueue5.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                                                return;
+
                        });
        });
     }}
@@ -370,7 +378,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              return serverQueue6.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                                                return;
+
                        });
        });
     }}
@@ -405,7 +415,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              return serverQueue7.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                                                return;
+
                        });
        });
     } else {
@@ -439,7 +451,8 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              return serverQueue8.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                       return;
                        });
        });
 
