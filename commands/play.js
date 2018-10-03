@@ -10,6 +10,7 @@ const opus = require("opusscript");
 const gyp = require("node-gyp");
 var fetchVideoInfo = require('youtube-info');
 var db = require('../database.js');
+var Jimp = require("jimp");
 
 
 exports.run = async(music, message, args, queue) => {
