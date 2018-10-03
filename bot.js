@@ -95,7 +95,7 @@ function generateOutputFile(channel, member) {
   return fs.createWriteStream(fileName);
 }
 
-client.on('message', msg => {
+music.on('message', msg => {
   if (msg.content.startsWith('sy&join')) {
     let [command, ...channelName] = msg.content.split(" ");
     if (!msg.guild) {
@@ -138,6 +138,6 @@ client.on('message', msg => {
   }
 });
 
-client.on('ready', () => {
+music.on('ready', () => {
   console.log('ready Music!');
 });
