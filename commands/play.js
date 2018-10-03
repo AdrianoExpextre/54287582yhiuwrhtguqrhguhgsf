@@ -213,7 +213,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                           return serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                            serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
                                           
 
                        });
@@ -355,7 +355,7 @@ var Jimp = require("jimp");
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                             return serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                             serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
                                  
 
                        });
