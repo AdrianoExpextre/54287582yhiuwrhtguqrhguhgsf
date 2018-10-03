@@ -202,7 +202,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
              let fuente2 = images[3];
              let mask = images[4];
           
-             img.resize(115, 110);
+             img.resize(115, 105);
              lv.print(fuente, 150, 30, `${v.title}`, 380);
              lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
@@ -213,13 +213,13 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
-                                                return;
+                           return serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                                          
 
                        });
        });
     }}};
-    /*if(song.durationh !== 0) {
+    if(song.durationh !== 0) {
       if(mlength == 1 || mlength == 0) {
         if(secondslength !== 1 || secondslength !== 0) {
     var Jimp = require("jimp");
@@ -238,7 +238,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
              let fuente2 = images[3];
              let mask = images[4];
           
-             img.resize(115, 110);
+             img.resize(115, 105);
              lv.print(fuente, 150, 30, `${v.title}`, 380);
              lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
@@ -274,7 +274,7 @@ var Jimp = require("jimp");
              let fuente2 = images[3];
              let mask = images[4];
           
-             img.resize(115, 110);
+             img.resize(115, 105);
              lv.print(fuente, 150, 30, `${v.title}`, 380);
              lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
@@ -309,7 +309,7 @@ var Jimp = require("jimp");
              let fuente2 = images[3];
              let mask = images[4];
           
-             img.resize(115, 110);
+             img.resize(115, 105);
              lv.print(fuente, 150, 30, `${v.title}`, 380);
              lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
@@ -325,7 +325,7 @@ var Jimp = require("jimp");
 
                        });
        });
-    }}*/
+    }}
     if(song.durationh == 0 && song.durationm !== 0) {
       if(secondslength !== 1 || secondslength !== 0) {
       var Jimp = require("jimp");
@@ -344,7 +344,7 @@ var Jimp = require("jimp");
              let fuente2 = images[3];
              let mask = images[4];
           
-             img.resize(115, 110);
+             img.resize(115, 105);
              lv.print(fuente, 150, 30, `${v.title}`, 380);
              lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
@@ -355,8 +355,8 @@ var Jimp = require("jimp");
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
-                                                return;
+                             return serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                                 
 
                        });
        });
