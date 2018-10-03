@@ -219,42 +219,40 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
     if(song.durationh !== 0) {
       if(mlength == 1 || mlength == 0) {
         if(secondslength !== 1 || secondslength !== 0) {
-    const embed3 = new Discord.RichEmbed()
-      
-         .setAuthor(o, fotinha)
-         .setDescription(`[${v.title}](${v.url})`)
-         .addField('Duração',"00:00/"+`${song.durationm}:${durations}`,true)
-         .addField('Visualizações:', Number(v.views).toLocaleString(),true)
-        
-         .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
-         .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
-         .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
-         .setTimestamp()
-         .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#00d8ff');
-         
-      return serverQueue.textChannel.send(embed3);;
+    
     }}}
     if(song.durationh !== 0) {
       if(mlength !== 1 || mlength !== 0) {
         if(secondslength !== 1 || secondslength !== 0) {
-const embed4 = new Discord.RichEmbed()
-      
-         .setAuthor(o, fotinha)
-         .setDescription(`[${v.title}](${v.url})`)
-         .addField('Duração',"00:00/"+`${song.durationm}:${durations}`,true)
-         .addField('Visualizações:', Number(v.views).toLocaleString(),true)
-        
-         .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
-         .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
-         .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
-         .setTimestamp()
-         .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#00d8ff');
+ let p1  =  Jimp.read(v.thumbnailUrl);
+       let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       Promise.all([p1, p2, p3, p4, p5]).then(function (images) {
          
-      return serverQueue.textChannel.send(embed4);
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+          
+             img.resize(115, 110);
+             lv.print(fuente, 150, 30, `${v.title}`, 380);
+             lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
+             lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
+       
+       
+       
+                             
+                       lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              return serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+
+                       });
+       });
     }}}
     if(song.durationh == 0 && song.durationm !== 0) {
       if(secondslength == 1 || secondslength == 0) {
@@ -295,22 +293,35 @@ const embed4 = new Discord.RichEmbed()
       return serverQueue.textChannel.send(embed6);
     }}
     if(song.durationh == 0 && song.durationm == 0 && song.durations !== 0) {
- const embed7 = new Discord.RichEmbed()
-      
-         .setAuthor(o, fotinha)
-         .setDescription(`<:movie_play_light_green:447056994398896159> [${v.title}](${v.url})`)
-         .addField('Duração',"00:00/"+`${song.durationm}:${durations}`,true)
-         .addField('Visualizações:', Number(v.views).toLocaleString(),true)
-        
-         .addField('Gostei', Number(v.likeCount).toLocaleString(),true)
-         .addField('Não gostei', Number(v.dislikeCount).toLocaleString(),true)
-         .addField("Comentários:", Number(v.commentCount).toLocaleString())
-         .setThumbnail(v.thumbnailUrl)
-         .setTimestamp()
-         .setFooter( message.guild.name , message.guild.iconURL )
-         .setColor('#00d8ff');
+  let p1  =  Jimp.read(v.thumbnailUrl);
+       let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       Promise.all([p1, p2, p3, p4, p5]).then(function (images) {
          
-      return serverQueue.textChannel.send(embed7);
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+          
+             img.resize(115, 110);
+             lv.print(fuente, 150, 30, `${v.title}`, 380);
+             lv.print(fuente2, 170, 95, `00:00/${song.durationm}:${durations}`);
+             lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
+       
+       
+       
+                             
+                       lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              return serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+
+                       });
+       });
     } else {
          let p1  =  Jimp.read(v.thumbnailUrl);
        let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
