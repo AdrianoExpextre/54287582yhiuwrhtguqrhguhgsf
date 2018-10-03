@@ -345,7 +345,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              message.channel.send(``\`${v.url}\```,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              message.channel.send(`\`${v.url}\``,new Discord.Attachment(image, 'CardMusicSysop.png'));
                              return;
                        });
        });
@@ -365,7 +365,7 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
              let mask = images[4];
           
              img.resize(115, 115);
-             lv.print(fuente, 150, 30, `${v.title}`, 380)`);
+             lv.print(fuente, 150, 30, `${v.title}`, 380);
              lv.print(fuente2, 170, 95, `${song.durationm}:${durations}`);
              lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
        
