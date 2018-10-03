@@ -26,9 +26,16 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
 
   
   const args1 = message.content.split(' ');
-  const searchString = args1.slice(1).join(' ');
+ 
   const url = args1[1] ? args1[1].replace(/<(.+)>/g, '$1') : '';
   const serverQueue = queue.get(message.guild.id);
+  const serverQueue2 = queue.get(message.guild.id);
+  const serverQueue3 = queue.get(message.guild.id);
+  const serverQueue4 = queue.get(message.guild.id);
+  const serverQueue5 = queue.get(message.guild.id);
+  const serverQueue6 = queue.get(message.guild.id);
+  const serverQueue7 = queue.get(message.guild.id);
+  const serverQueue8 = queue.get(message.guild.id);
   let o = message.mentions.users.first() ? message.mentions.users.first().username : message.author.username;
   let fotinha = message.mentions.users.first() ? message.mentions.users.first().avatarURL : message.author.avatarURL
   const voiceChannel = message.member.voiceChannel;
@@ -186,10 +193,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
   if(song.durationh !== 0) {
     if(secondslength == 1 || secondslength == 0) {
       if(mlength !== 1 || mlength !== 0) {
-       
-        var Jimp = require("jimp");
+    var Jimp = require("jimp");
 
-       let p1  =  Jimp.read(v.thumbnailUrl);
+       let p1  =  Jimp.read(message.author.avatarURL);
        let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
        let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
        let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
@@ -207,9 +213,9 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
        
           
              img.resize(115, 110);
-             lv.print(fuente, 150, 30, `${v.title}`, 380);
-             lv.print(fuente2, 170, 95, `${song.durationm}:${durations}`);
-             lv.print(fuente2, 380, 95, `${Number(v.views).toLocaleString()}`);
+             lv.print(fuente, 150, 30, `Welles - Rock N Roll Official Video (RECORD MUSIC) Konzdzilla`, 380);
+             lv.print(fuente2, 170, 95, `00:00/02:00`);
+             lv.print(fuente2, 380, 95, `192,500,900`);
        
        
        
@@ -217,13 +223,226 @@ const dispatcher = serverQueue.connection.playStream(yt(song.url))
                        lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
                       
                              if (err) throw err;
-                              return serverQueue.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                              return serverQueue2.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
                        });
        });
-         
-  
     }}};
-  
+    if(song.durationh !== 0) {
+      if(mlength == 1 || mlength == 0) {
+        if(secondslength !== 1 || secondslength !== 0) {
+     var Jimp = require("jimp");
+
+       let p1  =  Jimp.read(message.author.avatarURL);
+       let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       Promise.all([p1, p2, p3, p4, p5]).then(function (images) {
+         
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+             
+         
+       
+          
+             img.resize(115, 110);
+             lv.print(fuente, 150, 30, `Welles - Rock N Roll Official Video (RECORD MUSIC) Konzdzilla`, 380);
+             lv.print(fuente2, 170, 95, `00:00/02:00`);
+             lv.print(fuente2, 380, 95, `192,500,900`);
+       
+       
+       
+                             
+                       lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              return serverQueue3.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                       });
+       });
+    }}}
+    if(song.durationh !== 0) {
+      if(mlength !== 1 || mlength !== 0) {
+        if(secondslength !== 1 || secondslength !== 0) {
+ var Jimp = require("jimp");
+
+       let p1  =  Jimp.read(message.author.avatarURL);
+       let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       Promise.all([p1, p2, p3, p4, p5]).then(function (images) {
+         
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+             
+         
+       
+          
+             img.resize(115, 110);
+             lv.print(fuente, 150, 30, `Welles - Rock N Roll Official Video (RECORD MUSIC) Konzdzilla`, 380);
+             lv.print(fuente2, 170, 95, `00:00/02:00`);
+             lv.print(fuente2, 380, 95, `192,500,900`);
+       
+       
+       
+                             
+                       lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              return serverQueue4.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                       });
+       });
+    }}}
+    if(song.durationh == 0 && song.durationm !== 0) {
+      if(secondslength == 1 || secondslength == 0) {
+      var Jimp = require("jimp");
+
+       let p1  =  Jimp.read(message.author.avatarURL);
+       let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       Promise.all([p1, p2, p3, p4, p5]).then(function (images) {
+         
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+             
+         
+       
+          
+             img.resize(115, 110);
+             lv.print(fuente, 150, 30, `Welles - Rock N Roll Official Video (RECORD MUSIC) Konzdzilla`, 380);
+             lv.print(fuente2, 170, 95, `00:00/02:00`);
+             lv.print(fuente2, 380, 95, `192,500,900`);
+       
+       
+       
+                             
+                       lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              return serverQueue5.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                       });
+       });
+    }}
+    if(song.durationh == 0 && song.durationm !== 0) {
+      if(secondslength !== 1 || secondslength !== 0) {
+  var Jimp = require("jimp");
+
+       let p1  =  Jimp.read(message.author.avatarURL);
+       let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       Promise.all([p1, p2, p3, p4, p5]).then(function (images) {
+         
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+             
+         
+       
+          
+             img.resize(115, 110);
+             lv.print(fuente, 150, 30, `Welles - Rock N Roll Official Video (RECORD MUSIC) Konzdzilla`, 380);
+             lv.print(fuente2, 170, 95, `00:00/02:00`);
+             lv.print(fuente2, 380, 95, `192,500,900`);
+       
+       
+       
+                             
+                       lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              return serverQueue6.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                       });
+       });
+    }}
+    if(song.durationh == 0 && song.durationm == 0 && song.durations !== 0) {
+  var Jimp = require("jimp");
+
+       let p1  =  Jimp.read(message.author.avatarURL);
+       let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       Promise.all([p1, p2, p3, p4, p5]).then(function (images) {
+         
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+             
+         
+       
+          
+             img.resize(115, 110);
+             lv.print(fuente, 150, 30, `Welles - Rock N Roll Official Video (RECORD MUSIC) Konzdzilla`, 380);
+             lv.print(fuente2, 170, 95, `00:00/02:00`);
+             lv.print(fuente2, 380, 95, `192,500,900`);
+       
+       
+       
+                             
+                       lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              return serverQueue7.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                       });
+       });
+    } else {
+        var Jimp = require("jimp");
+
+       let p1  =  Jimp.read(message.author.avatarURL);
+       let p2  =  Jimp.read('https://cdn.discordapp.com/attachments/485376421271961600/497045442362867762/CardMusicSysop.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_16_BLACK);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       Promise.all([p1, p2, p3, p4, p5]).then(function (images) {
+         
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+             
+         
+       
+          
+             img.resize(115, 110);
+             lv.print(fuente, 150, 30, `Welles - Rock N Roll Official Video (RECORD MUSIC) Konzdzilla`, 380);
+             lv.print(fuente2, 170, 95, `00:00/02:00`);
+             lv.print(fuente2, 380, 95, `192,500,900`);
+       
+       
+       
+                             
+                       lv.composite(img, 15, 5).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              return serverQueue8.textChannel.send(``,new Discord.Attachment(image, 'CardMusicSysop.png'));
+                       });
+       });
+
+            }
           })
 }
 
